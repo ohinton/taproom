@@ -18,7 +18,8 @@ import {CheapnessPipe} from './cheapness.pipe';
     <option value="expensive" selected="selected">Show expensive beers</option>
   </select>
   <keg-display *ngFor="#currentKeg of kegList | cheapness:selectedCheapness" (click)="kegClicked(currentKeg)"
-  [keg] = "currentKeg">
+  [keg] = "currentKeg"
+  [class.cheap]="currentKeg.price <= 5">
   </keg-display>
   <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
   </edit-keg-details>
