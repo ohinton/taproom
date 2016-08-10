@@ -5,9 +5,19 @@ import { Keg } from './keg.model';
     selector:'keg-display',
     inputs: ['keg'],
     template:`
-    <h3> {{ keg.name }}, {{keg.brand}}, USD {{keg.price}}, {{keg.alcoholContent}}, {{keg.pints}} </h3>
+    <h1>{{ keg.name }}</h1>
+    <h2>{{keg.brand}}</h2>
+    <ul>
+      <li> Price: $ {{keg.price}} </li>
+      <li> Alcohol Content: {{keg.alcoholContent}} </li>
+      <li> Remaining Pints: {{keg.pints}} </li>
+    </ul>
+    <button (click)="pourPint()" name="label">Pour A Pint</button>
     `
 })
 export class KegComponent{
   public keg: Keg;
+  pourPint(){
+    this.keg.pints --;
+  }
 }
