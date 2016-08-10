@@ -18,9 +18,9 @@ export class AppComponent {
   public kegs: Keg[];
   constructor(){
     this.kegs = [
-    new Keg("Miller Highlife", "Miller Brewing Co.", 25, 5.5),
-    new Keg("Bud Light", "Anheuser-Busch", 22, 5.75),
-    new Keg("PBR", "Pabst", 20, 5.25)
+    new Keg("Miller Highlife", "Miller Brewing Co.", 5, 5.5),
+    new Keg("Bud Light", "Anheuser-Busch", 2, 5.75),
+    new Keg("PBR", "Pabst", 3, 5.25)
   ];
   }
   kegWasSelected(clickedKeg: Keg): void {
